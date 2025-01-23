@@ -17,7 +17,8 @@ model User {
   sessions      Session[]
   password      String?
   role          String          @default("USER")
-  // Optional for WebAuthn support
+  resetToken       String?  // โทเค็นสำหรับรีเซ็ตรหัสผ่าน (nullable)
+  resetTokenExpiry DateTime? // วันและเวลาที่โทเค็นหมดอายุ (nullable)
   Authenticator Authenticator[]
  
   createdAt DateTime @default(now())
